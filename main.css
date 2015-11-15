@@ -19,10 +19,10 @@
 
 #map {
     height: 600px;
-    width: 80%;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: 30px;
+    margin-bottom: auto;
     border-radius: 6px;
     
 }
@@ -42,4 +42,15 @@
 
 .fancy {
     font-family: Pacifico;
+}
+
+.buffer {
+     background-color: rgba(75,120,228,.5);
+    margin-right: auto;
+    margin-left: auto;
+    height: 620px;
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
 }
