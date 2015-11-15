@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id = "html">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +17,6 @@
 
     <!-- Our Css -->
     <link rel="stylesheet" href="main.css">  
-      
   </head>
 
   <body>
@@ -25,10 +24,11 @@
           <div class="jumbotron" id="jumbo">
             <h1>RoadTip</h1>      
             <p>Find the best spots along your road trip route.</p>
-            
           </div> 
         
-        <div>This is where the other stuff goes </div>
+        <div id="map">
+        </div>
+
     </div>
 
 
@@ -37,5 +37,12 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+      
+    <!-- Here is Google's API and Zale's JS-->
+    <script src="test.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDNkp8dHB_BSSgNTk6EtKjQQKYl2d0e1s&signed_in=true&callback=initMap"
+        async defer></script>
+      
   </body>
 </html>

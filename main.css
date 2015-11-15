@@ -1,7 +1,19 @@
 .main {
     padding-top: 40px;
+    height: 100%;
 }
 
 #jumbo {
     background-image: url(food.png);
+}
+
+#map {
+    height: 400px;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#html {
+    height: 100%;
 }
