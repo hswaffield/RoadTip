@@ -58,3 +58,8 @@
     margin-bottom: 15px;
     border-radius: 6px;
 }
+
+.seperator {
+    height= 60px;
+    background-color: yellow;
+}
