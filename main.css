@@ -1,19 +1,41 @@
 .main {
-    padding-top: 40px;
     height: 100%;
+    width: 100%;
+    background-image: url(road.jpg);
+    background-position: center;
 }
 
 #jumbo {
-    background-image: url(food.png);
+    background-color: rgba(75,120,228,.5);
+    width:100%;
+    margin-top: 15px;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    
+    text-align: center;
 }
 
 #map {
-    height: 400px;
-    width: 90%;
+    height: 600px;
+    width: 80%;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 30px;
+    border-radius: 6px;
+    
 }
 
 #html {
     height: 100%;
+    background-color: #4B78E4;
+}
+
+.footer{
+    
+    width: 100%;
+    text-align: center;
+    color:green;
+    background-color: rgba(75,120,228,.5);
 }
