@@ -2,7 +2,7 @@ var map;
 var directionsService;
 var directionsDisplay;
 
-function initMap(){
+function initMap() {
 	directionsService = new google.maps.DirectionsService();
 	directionsDisplay = new google.maps.DirectionsRenderer();
 		
@@ -18,7 +18,7 @@ function initMap(){
 
 	directionsDisplay.setMap(map);
 
-	var startMarker, endMarker;
+  var startMarker, endMarker;
 	startMarker = new google.maps.Marker({
 		title: 'Start',
 		label: 'Start',
@@ -56,68 +56,51 @@ function initMap(){
 			}
 		}
 	}
-
-
-	/*map.addListener('click', function(e){
-		placeMarkerAndPanTo(e.latLng, map);
-	});
-
-	function placeMarkerAndPanTo(latLng, map){
-		marker.setPosition(latLng);
-		map.panTo(latLng);
-	}
-	*/
-
-	/*
-	Pans back to marker when center is changed:
-
-	map.addListener('center_changed', function(){
-		window.setTimeout(function(){
-			map.panTo(marker.getPosition());
-		}, 3000);
-	});
-
-	marker.addListener('click', function(){
-		map.setZoom(8);
-		map.setCenter(marker.getPosition());
-	});*/
-
 }
 
-function displayRoute(startMarker, endMarker){
-    var start = startMarker.getPosition();
+function displayRoute(startMarker, endMarker) {
+
+	var start = startMarker.getPosition();
     var end   = endMarker.getPosition();
 
-    var request = {
-        origin:start,
-        destination:end,
-        travelMode:google.maps.TravelMode.DRIVING
+    var req = {
+    	origin: start,
+    	destination: end,
+    	travelMode: google.maps.TravelMode.DRIVING
     };
 
-    directionsService.route(request, function (result, status) 
-    {
-        if(status == google.maps.DirectionsStatus.OK){
-            directionsDisplay.setDirections (result);
+	directionsService.route(req, function(response, status) {
+    	if (status === google.maps.DirectionsStatus.OK) {
+      	document.getElementById('warnings-panel').innerHTML = '<b>' + response.routes[0].warnings + '</b>';
 
-            pointsArray = response.routes[0].overview_path;
-      		console.log("Points");
-       		console.log(pointsArray[0].lat());
-      		console.log(pointsArray[0].lng());
+     	directionsDisplay.setDirections(response);
       
-      		var pointArray = [];
-      
-      		for (var j=0; j< pointsArray.length;j++) {
-	        	var myLatLngTemp = {lat: pointsArray[j].lat(), lng:pointsArray[j].lng()};
-	        	var newmarker = new google.maps.Marker({
-	        		position: myLatLngTemp,
-	        		map: map,
-	        		title: 'Hello World!'
-	      		});
-       		}
-       	}
+      	pointsArray = response.routes[0].overview_path;
+      	console.log("Points");
+      	console.log(pointsArray[0].lat());
+      	console.log(pointsArray[0].lng());
 
-        else {
-        	alert("Error: " + status);
-        }
-    });
+      	wayPoints = [];
+
+      	for (var j = 0; j < pointsArray.length; j += 15) {
+      		wayLat = pointsArray[j].lat();
+      		wayLng = pointsArray[j].lng();
+
+        	var myLatLngTemp = {lat: wayLat, lng: wayLng};
+
+	       //var newmarker = new google.maps.Marker({
+	        //	position: myLatLngTemp,
+	       // 	map: map,
+	        //	title: "waypoint "+j
+      		//});
+
+      		requestJson(wayLat, wayLng, map);
+    	}
+      
+    } else {
+      alert('Error: ' + status);
+    }
+  });
+
 }
+
