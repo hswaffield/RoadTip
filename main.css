@@ -36,8 +36,9 @@
     
     width: 100%;
     text-align: center;
-    padding-bottom: 4px;
+    padding-top: 4px;
     background-color: rgba(75,120,228,.5);
+    
 }
 
 .fancy {
@@ -46,6 +47,7 @@
 
 .normal {
    font-weight: bold;
+    color:aliceblue;
 }
 
 .buffer {
@@ -60,6 +62,8 @@
 }
 
 .seperator {
-    height= 60px;
-    background-color: yellow;
+    height= 6px;
+    font-size: 6.5px;
+     background-color: #4B78E4;
+    
 }

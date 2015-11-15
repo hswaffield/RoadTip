@@ -72,6 +72,7 @@ function displayRoute(startMarker, endMarker) {
 	directionsService.route(req, function(response, status) {
     	if (status === google.maps.DirectionsStatus.OK) {
 
+
      	directionsDisplay.setDirections(response);
       
       	pointsArray = response.routes[0].overview_path;
