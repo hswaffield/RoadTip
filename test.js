@@ -71,7 +71,6 @@ function displayRoute(startMarker, endMarker) {
 
 	directionsService.route(req, function(response, status) {
     	if (status === google.maps.DirectionsStatus.OK) {
-      	document.getElementById('warnings-panel').innerHTML = '<b>' + response.routes[0].warnings + '</b>';
 
      	directionsDisplay.setDirections(response);
       
@@ -87,12 +86,6 @@ function displayRoute(startMarker, endMarker) {
       		wayLng = pointsArray[j].lng();
 
         	var myLatLngTemp = {lat: wayLat, lng: wayLng};
-
-	       //var newmarker = new google.maps.Marker({
-	        //	position: myLatLngTemp,
-	       // 	map: map,
-	        //	title: "waypoint "+j
-      		//});
 
       		requestJson(wayLat, wayLng, map);
     	}
