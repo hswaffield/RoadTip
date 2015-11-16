@@ -54,7 +54,7 @@
      background-color: rgba(75,120,228,.5);
     margin-right: auto;
     margin-left: auto;
-    height: 650px;
+    min-height: 650px;
     width: 80%;
     padding: 10px;
     margin-bottom: 15px;
