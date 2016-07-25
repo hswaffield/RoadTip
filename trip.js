@@ -1,6 +1,6 @@
 var latitude = 42.33141;
 var longitude = -71.099396;
-var key = "f0aa9402-a45c-4e90-86b2-acaab8076bc3";
+var key = "77b4db43-49ae-484d-a345-bbc021b877e6";
 
 function requestJson(lat, lng, map){
 	var quest = "http://api.tripadvisor.com/api/partner/2.0/map/"+lat+","+lng+"?key="+key;
